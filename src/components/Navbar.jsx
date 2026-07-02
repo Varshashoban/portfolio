@@ -1,8 +1,11 @@
 const navLinks = [
   { label: 'Home', href: '#home', id: 'home' },
   { label: 'About', href: '#about', id: 'about' },
+  { label: 'Experience', href: '#experience', id: 'experience' },
   { label: 'Skills', href: '#skills', id: 'skills' },
   { label: 'Projects', href: '#projects', id: 'projects' },
+  { label: 'Research', href: '#research', id: 'research' },
+  { label: 'Certifications', href: '#certifications', id: 'certifications' },
   { label: 'Contact', href: '#contact', id: 'contact' },
 ];
 

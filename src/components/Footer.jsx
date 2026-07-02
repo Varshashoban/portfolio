@@ -4,9 +4,9 @@ function Footer() {
       <div className="container footer__inner">
         <div>
           <p className="footer__name">S Varsha</p>
-          <p className="footer__copy">Designed and built with care</p>
+          <p className="footer__copy">Designed, developed, and refined with care</p>
           <p className="footer__note">
-            Crafted with clarity, built with consistency.
+            Building practical software while learning continuously.
           </p>
         </div>
 

@@ -6,64 +6,156 @@ import ProjectCard from './components/ProjectCard';
 import SectionTitle from './components/SectionTitle';
 import SkillCard from './components/SkillCard';
 
-const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+const sections = [
+  'home',
+  'about',
+  'experience',
+  'skills',
+  'projects',
+  'research',
+  'certifications',
+  'contact',
+];
 
 const skillCategories = [
   {
-    title: 'Programming',
+    title: 'Languages',
     accent: '01',
     icon: '</>',
-    items: ['Python', 'Java', 'C', 'C++'],
+    items: ['Java', 'Python', 'C', 'C++', 'JavaScript'],
   },
   {
-    title: 'Web',
+    title: 'Frontend',
     accent: '02',
     icon: 'UI',
-    items: ['HTML5', 'CSS3', 'JavaScript', 'Full-Stack Development (basics)'],
+    items: ['React', 'HTML5', 'CSS3', 'Tailwind CSS', 'Vite'],
   },
   {
-    title: 'DevOps & Tools',
+    title: 'Backend',
     accent: '03',
+    icon: 'API',
+    items: ['Node.js', 'Express.js', 'Spring Boot', 'REST APIs'],
+  },
+  {
+    title: 'Databases',
+    accent: '04',
+    icon: 'DB',
+    items: ['MongoDB Atlas', 'PostgreSQL', 'SQL'],
+  },
+  {
+    title: 'Cloud & DevOps',
+    accent: '05',
     icon: 'CLD',
     items: [
-      'Git & GitHub',
+      'AWS',
       'Docker',
       'Jenkins',
-      'AWS (EC2, S3, IAM, VPC)',
-      'VS Code',
-      'Figma',
+      'Git',
+      'GitHub',
+      'Hyper-V',
+      'IIS',
     ],
+  },
+  {
+    title: 'AI & Tools',
+    accent: '06',
+    icon: 'AI',
+    items: ['Google ADK', 'OpenCV', 'MediaPipe', 'TensorFlow Lite', 'VS Code', 'Postman', 'Figma'],
   },
 ];
 
 const projects = [
   {
-    title: 'Smart Study Planner',
+    title: 'HabitFlow',
     description:
-      'Helps students organize study schedules and manage tasks efficiently.',
-    tech: ['React', 'Docker', 'JavaScript', 'HTML', 'CSS'],
-    link: 'https://github.com/Varshashoban/smart-study-planner.git',
+      'A full-stack habit tracking application with authentication, progress tracking, analytics and a responsive interface.',
+    tech: ['React', 'Node.js', 'Express.js', 'MongoDB Atlas', 'JWT', 'Tailwind CSS'],
+    status: 'Completed',
+    links: [
+      { label: 'Live Demo', href: 'https://habit-tracker-gamma-gray.vercel.app' },
+      { label: 'GitHub', href: 'https://github.com/Varshashoban/habit-tracker.git' },
+    ],
+  },
+  {
+    title: 'SyncStep',
+    description:
+      'An AI-powered human movement analysis and coaching system using computer vision and pose estimation.',
+    tech: ['Python', 'Flask', 'OpenCV', 'MoveNet', 'MediaPipe', 'TensorFlow Lite'],
+    status: 'Completed',
+    links: [{ label: 'GitHub Coming Soon' }],
   },
   {
     title: 'Sea Level Rise Dashboard',
     description:
-      'Visualizes sea level data to show environmental impact trends.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    link: 'https://github.com/Varshashoban/sea-level-rise-dashboard.git',
-  },
-  {
-    title: 'Jenkins CI/CD Setup',
-    description:
-      'Implements a CI/CD pipeline with Jenkins for automated build and deployment.',
-    tech: ['Jenkins', 'GitHub', 'Python'],
-    link: 'https://github.com/Varshashoban/Jenkins2.git',
+      'An interactive environmental dashboard visualizing sea-level rise using map-based visualizations.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Leaflet.js'],
+    status: 'Completed',
+    links: [{ label: 'GitHub', href: 'https://github.com/harini777/sea-level-rise-dashboard.git' }],
   },
 ];
 
 const highlights = [
-  'Cloud-first learning',
-  'Responsive UI building',
-  'Deployment-ready workflows',
+  'Full-stack development',
+  'Cloud infrastructure',
+  'AI-focused learning',
+];
+
+const experienceSkills = [
+  'Java Spring Boot',
+  'ASP.NET (ASPX)',
+  'IIS Website Hosting',
+  'Hyper-V Virtualization',
+  'Networking Fundamentals',
+  'Cloud Computing Fundamentals',
+  'Artificial Intelligence Fundamentals',
+  'Google ADK (Offline AI Agent Development)',
+];
+
+const researchPapers = [
+  {
+    title:
+      'A Cognitive Wireless Framework for Intelligent Queue Management and Priority Dissemination in Public Service Infrastructures Using nRF24L01 Transceivers',
+    status: 'Under Review',
+    description:
+      'Proposes an intelligent wireless framework using nRF24L01 transceivers to improve queue management and priority dissemination in public service environments through efficient embedded communication.',
+  },
+  {
+    title:
+      'Traffic Engineering and Load Balancing in Software Defined Networks Using Ant Colony Optimization',
+    status: 'Under Review',
+    description:
+      'Research exploring intelligent traffic engineering and network optimization in Software Defined Networks using Ant Colony Optimization.',
+  },
+  {
+    title:
+      'A Privacy–Complexity Framework for Classifying Graph Algorithms in Edge Computing',
+    status: 'Under Review',
+    description:
+      'Introduces a Privacy–Complexity (PC) Framework for evaluating graph algorithms based on computational efficiency and privacy risk in edge computing environments, enabling privacy-aware algorithm selection for decentralized systems.',
+  },
+];
+
+const certifications = [
+  {
+    title: 'Exploring Artificial Intelligence',
+    issuer: 'IBM SkillsBuild',
+  },
+  {
+    title: 'Agile Scrum in Practice',
+    issuer: 'Infosys Springboard',
+  },
+  {
+    title: 'Software Engineering and Agile Software Development',
+    issuer: 'Infosys Springboard',
+  },
+  {
+    title: 'DevOps Practitioner - Agility Delivered Approach',
+    issuer: 'VIT Chennai',
+  },
+  {
+    title: 'Operating System Fundamentals',
+    issuer: 'Scaler Topics',
+  },
 ];
 
 function App() {
@@ -114,20 +206,20 @@ function App() {
               <div className="hero__badge">
                 Available for internships and placements
               </div>
-              <p className="hero__eyebrow">Portfolio 2026</p>
               <h1 className="hero__name">S Varsha</h1>
               <h2 className="hero__title">
-                CSE Student | Cloud-Enabled Full-Stack Developer
+                Computer Science Student | Full-Stack Developer | Cloud & AI Enthusiast
               </h2>
               <p className="hero__headline">
-                Building scalable web applications with cloud-first thinking.
+                Building practical software across full-stack development, cloud computing, and AI.
               </p>
               <p className="hero__tagline">
-                I build and deploy real-world web applications using modern cloud
-                tools.
+                I enjoy turning ideas into clean, useful applications while learning
+                deeply through projects, research, and real-world technical exposure.
               </p>
               <p className="hero__subtagline">
-                Designing systems that are simple, scalable, and impactful.
+                Focused on internship opportunities where software engineering,
+                infrastructure, and applied AI come together.
               </p>
               <div className="hero__actions">
                 <a className="button button--primary" href="#projects">
@@ -147,36 +239,23 @@ function App() {
             <div className="hero__panel reveal">
               <div className="hero-visual surface-card">
                 <div className="hero-visual__top">
-                  <span className="hero-card__label">Focused Learning Path</span>
-                  <h3>Structured growth across frontend, cloud, and deployment.</h3>
-                  <p>
-                    A clean development approach built around practical React
-                    interfaces, AWS fundamentals, and DevOps-ready workflows.
-                  </p>
+                  <span className="hero-card__label">Education</span>
+                  <h3>B.Tech Computer Science and Engineering</h3>
+                  <p>VIT Chennai</p>
                 </div>
 
                 <div className="hero-visual__grid">
                   <div className="hero-visual__item">
-                    <strong>Frontend</strong>
-                    <span>React, JavaScript, HTML, CSS</span>
+                    <strong>Experience</strong>
+                    <span>AI Infrastructure Intern, Sonata Software</span>
                   </div>
                   <div className="hero-visual__item">
-                    <strong>Cloud</strong>
-                    <span>AWS fundamentals with deployment-oriented thinking</span>
+                    <strong>Focus</strong>
+                    <span>Full-Stack Development, Cloud Computing, Artificial Intelligence</span>
                   </div>
                   <div className="hero-visual__item">
-                    <strong>Workflow</strong>
-                    <span>GitHub, Docker, Jenkins, and project-based learning</span>
-                  </div>
-                </div>
-                <div className="hero-visual__footer">
-                  <div>
                     <strong>Goal</strong>
-                    <span>Internship-ready portfolio with practical, real-world project depth.</span>
-                  </div>
-                  <div>
-                    <strong>Approach</strong>
-                    <span>Clean code, thoughtful structure, and polished presentation.</span>
+                    <span>Software Engineering Internships, Research and Practical Development</span>
                   </div>
                 </div>
               </div>
@@ -192,45 +271,48 @@ function App() {
           <div className="container">
             <SectionTitle
               eyebrow="About"
-              title="Building useful digital experiences with clarity and purpose."
+              title="Curious, practical, and focused on building useful software."
             />
             <div className="about-layout reveal">
               <div className="about-card surface-card">
                 <div className="about-tags">
-                  <span className="badge">Cloud-focused</span>
-                  <span className="badge">Project-driven</span>
+                  <span className="badge">Full-stack focused</span>
+                  <span className="badge">Research-minded</span>
                   <span className="badge">Consistent learner</span>
                 </div>
                 <p className="about-card__lead">
-                  I am a 2nd-year B.Tech Computer Science and Engineering student
-                  at VIT Chennai.
+                  I am a B.Tech Computer Science and Engineering student at VIT Chennai.
                 </p>
                 <p>
-                  I am currently focusing on full-stack development, cloud
-                  technologies (AWS), and building real-world projects.
+                  I am passionate about Full-Stack Development, Cloud Computing,
+                  and Artificial Intelligence, with a strong interest in research.
                 </p>
                 <p>
-                  I enjoy turning ideas into simple, functional, and impactful
-                  applications.
+                  I enjoy building practical software, learning constantly, and
+                  applying technical ideas to meaningful development problems.
+                </p>
+                <p>
+                  I am looking for internship opportunities where I can contribute,
+                  grow, and work on real software systems.
                 </p>
               </div>
 
               <div className="about-visual surface-card">
                 <div className="about-visual__header">
                   <span className="about-visual__eyebrow">What drives my work</span>
-                  <h3>Practical learning with clear technical direction.</h3>
+                  <h3>Practical learning with research curiosity.</h3>
                 </div>
                 <div className="about-visual__metric">
-                  <strong>Cloud-first</strong>
-                  <span>Learning deployment patterns, infrastructure basics, and practical workflows.</span>
+                  <strong>Build</strong>
+                  <span>Creating applications that solve clear problems with usable, maintainable interfaces.</span>
                 </div>
                 <div className="about-visual__metric">
-                  <strong>Real projects</strong>
-                  <span>Applying classroom knowledge to tools that solve genuine user needs.</span>
+                  <strong>Explore</strong>
+                  <span>Studying cloud platforms, AI tools, and research-led approaches to engineering.</span>
                 </div>
                 <div className="about-visual__metric">
-                  <strong>User clarity</strong>
-                  <span>Designing interfaces that are simple to use, readable, and purposeful.</span>
+                  <strong>Grow</strong>
+                  <span>Learning continuously through internships, projects, certifications, and practice.</span>
                 </div>
                 <div className="about-visual__ribbon">VIT Chennai | CSE</div>
               </div>
@@ -240,6 +322,41 @@ function App() {
 
         <div className="section-divider">
           <span>Clean code. Clear thinking. Real impact.</span>
+        </div>
+
+        <section className="section" id="experience">
+          <div className="container">
+            <SectionTitle
+              eyebrow="Experience"
+              title="Hands-on exposure to enterprise software, cloud, and AI infrastructure."
+            />
+            <div className="experience-grid">
+              <article className="surface-card project-card experience-card reveal">
+                <div className="project-card__meta">
+                  <span className="project-card__index">01</span>
+                  <span className="project-card__type">Experience</span>
+                </div>
+                <h3>AI Infrastructure Intern</h3>
+                <p className="experience-card__company">Sonata Software</p>
+                <p>
+                  Completed an AI Infrastructure internship where I gained hands-on
+                  exposure to enterprise software development, backend technologies,
+                  cloud infrastructure and virtualization.
+                </p>
+                <div className="badge-list">
+                  {experienceSkills.map((item) => (
+                    <span className="badge badge--accent" key={item}>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <div className="section-divider">
+          <span>Skills shaped by practice and curiosity.</span>
         </div>
 
         <section className="section section--muted" id="skills">
@@ -293,6 +410,53 @@ function App() {
           </div>
         </section>
 
+        <div className="section-divider">
+          <span>Research questions, practical systems, better outcomes.</span>
+        </div>
+
+        <section className="section section--muted" id="research">
+          <div className="container">
+            <SectionTitle
+              eyebrow="Research"
+              title="Research focused on intelligent systems, embedded computing, networking, and optimization."
+            />
+            <div className="research-grid">
+              {researchPapers.map((paper, index) => (
+                <article className="surface-card project-card reveal" key={paper.title}>
+                  <div className="project-card__meta">
+                    <span className="project-card__index">0{index + 1}</span>
+                    <span className="project-card__type">{paper.status}</span>
+                  </div>
+                  <h3>{paper.title}</h3>
+                  <p>{paper.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <div className="section-divider">
+          <span>Learning through structured practice.</span>
+        </div>
+
+        <section className="section" id="certifications">
+          <div className="container">
+            <SectionTitle
+              eyebrow="Certifications"
+              title="Focused learning across AI, agile, DevOps, and systems fundamentals."
+            />
+            <div className="certifications-grid">
+              {certifications.map((certification, index) => (
+                <article className="surface-card certification-card reveal" key={certification.title}>
+                  <span className="project-card__index">0{index + 1}</span>
+                  <h3>{certification.title}</h3>
+                  <p>{certification.issuer}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="section section--muted" id="contact">
           <div className="container">
             <div className="section-intro">
@@ -308,12 +472,11 @@ function App() {
               <div className="contact-card surface-card">
                 <p className="contact-card__copy">
                   I&apos;m open to learning opportunities, project collaborations,
-                  and internship conversations in software development and cloud
-                  technology.
+                  research conversations, and internships in software development,
+                  cloud technology, and AI.
                 </p>
                 <div className="contact-links">
                   <a href="mailto:varshashoban@gmail.com">Mail: varshashoban@gmail.com</a>
-                  <a href="tel:9677632754">Phone: 9677632754</a>  
                   <a
                     href="https://github.com/Varshashoban"
                     target="_blank"
@@ -335,8 +498,8 @@ function App() {
                 <span className="contact-cta__label">Reach Out</span>
                 <h3>Interested in working together?</h3>
                 <p>
-                  Let&apos;s talk about internships, student opportunities, and
-                  projects where thoughtful frontend and cloud skills can make a
+                  Let&apos;s talk about internships, student opportunities, research,
+                  and projects where thoughtful software development can make a
                   difference.
                 </p>
                 <a className="button button--primary" href="mailto:varshashoban@gmail.com">

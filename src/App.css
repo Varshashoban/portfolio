@@ -612,7 +612,9 @@
 }
 
 .skills-grid,
-.projects-grid {
+.projects-grid,
+.research-grid,
+.certifications-grid {
   display: grid;
   gap: 1.5rem;
 }
@@ -625,8 +627,17 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.research-grid {
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.certifications-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
 .skill-card,
-.project-card {
+.project-card,
+.certification-card {
   padding: 1.75rem;
 }
 
@@ -743,7 +754,11 @@
 }
 
 .project-card__type {
-  color: var(--text-secondary);
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  color: var(--accent-strong);
+  background: rgba(231, 241, 252, 0.92);
+  border: 1px solid rgba(112, 149, 194, 0.12);
 }
 
 .project-card:hover,
@@ -766,9 +781,62 @@
   transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
 }
 
+.project-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.project-card__links .project-card__link {
+  margin-top: 0;
+}
+
+.project-card__link--disabled {
+  color: var(--text-secondary);
+  cursor: default;
+}
+
+.project-card__link--disabled:hover {
+  transform: none;
+}
+
+.experience-card {
+  max-width: 58rem;
+}
+
+.experience-card__company {
+  color: var(--accent-strong) !important;
+  font-weight: 800;
+}
+
+.certification-card {
+  display: grid;
+  gap: 0.8rem;
+  min-height: 100%;
+}
+
+.certification-card h3 {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.certification-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
 .contact-links {
   display: grid;
   gap: 1rem;
+}
+
+.contact-card__resume {
+  margin-top: 1.5rem;
 }
 
 .contact-links a,
@@ -863,7 +931,9 @@
   .about-layout,
   .contact-layout,
   .skills-grid,
-  .projects-grid {
+  .projects-grid,
+  .research-grid,
+  .certifications-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -888,6 +958,8 @@
   .contact-layout,
   .skills-grid,
   .projects-grid,
+  .research-grid,
+  .certifications-grid,
   .footer__inner {
     grid-template-columns: 1fr;
   }
